@@ -41,6 +41,8 @@ import {
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
+require("dotenv").config();
+
 const BasketPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -122,7 +124,7 @@ const BasketPage = () => {
     try {
       // Submit the order
       console.log(order);
-      await axios.post("http://localhost:4000/order", order);
+      await axios.post(`${process.env.SERVER_URL}/order`, order);
 
       // Update the stock for each product in the order
       const updatedProducts = products.map(async (product) => {
@@ -130,7 +132,7 @@ const BasketPage = () => {
 
         if (newStock >= 0) {
           await axios.put(
-            `http://localhost:4000/product/${product._id}`,
+            `${process.env.SERVER_URL}/product/${product._id}`,
             {
               ...product,
               stock: newStock,

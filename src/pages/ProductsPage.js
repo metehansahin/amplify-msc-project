@@ -11,6 +11,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 
+require("dotenv").config();
+
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
@@ -20,7 +22,7 @@ const ProductsPage = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/product", {
+      const response = await axios.get(`${process.env.SERVER_URL}/product`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -52,11 +54,14 @@ const ProductsPage = () => {
 
   const deleteProduct = async () => {
     try {
-      await axios.delete(`http://localhost:4000/product/${productToDelete}`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      await axios.delete(
+        `${process.env.SERVER_URL}/product/${productToDelete}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setProducts(
         products.filter((product) => product._id !== productToDelete)
       );

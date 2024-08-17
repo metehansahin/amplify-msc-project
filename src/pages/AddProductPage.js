@@ -12,6 +12,8 @@ import {
 import NavigationBar from "../components/NavigationBar";
 import { useNavigate } from "react-router-dom";
 
+require("dotenv").config();
+
 const AddProductPage = () => {
   const navigate = useNavigate();
 
@@ -75,7 +77,7 @@ const AddProductPage = () => {
     setIsSubmitting(true);
     try {
       const response = await axios.post(
-        "http://localhost:4000/product",
+        `${process.env.SERVER_URL}/product`,
         product,
         {
           headers: {

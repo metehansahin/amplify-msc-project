@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../auth_context/authContext";
 import axios from "axios";
 
+require("dotenv").config();
+
 const SignupPage = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
@@ -26,7 +28,7 @@ const SignupPage = (props) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/user/register",
+        `${process.env.SERVER_URL}/user/register`,
         credentials,
         {
           headers: {

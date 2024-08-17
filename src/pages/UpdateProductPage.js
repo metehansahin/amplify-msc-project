@@ -12,6 +12,8 @@ import {
 import NavigationBar from "../components/NavigationBar";
 import { useNavigate, useParams } from "react-router-dom";
 
+require("dotenv").config();
+
 const UpdateProductPage = () => {
   const { id } = useParams(); // Get the product ID from the route params
   const navigate = useNavigate();
@@ -32,7 +34,7 @@ const UpdateProductPage = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/product/${id}`,
+          `${process.env.SERVER_URL}/product/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -94,7 +96,7 @@ const UpdateProductPage = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.put(`http://localhost:4000/product/${id}`, product, {
+      await axios.put(`${process.env.SERVER_URL}/product/${id}`, product, {
         headers: {
           "Content-Type": "application/json",
         },

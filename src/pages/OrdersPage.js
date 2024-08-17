@@ -17,6 +17,8 @@ import {
 import axios from "axios";
 import NavigationBar from "../components/NavigationBar";
 
+require("dotenv").config();
+
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,10 +37,10 @@ const Orders = () => {
       try {
         let response;
         if (merchant) {
-          response = await axios.get("http://localhost:4000/order");
+          response = await axios.get(`${process.env.SERVER_URL}/order`);
         } else {
           response = await axios.get(
-            `http://localhost:4000/order/${userId}/all`
+            `${process.env.SERVER_URL}/order/${userId}/all`
           );
         }
 
@@ -51,7 +53,9 @@ const Orders = () => {
         sortedOrders.forEach((order) =>
           order.products.forEach((product) =>
             productPromises.push(
-              axios.get(`http://localhost:4000/product/${product.productID}`)
+              axios.get(
+                `${process.env.SERVER_URL}/product/${product.productID}`
+              )
             )
           )
         );
@@ -75,7 +79,7 @@ const Orders = () => {
 
   const handleFulfillOrder = async (orderId) => {
     try {
-      await axios.put(`http://localhost:4000/order/${orderId}/fulfill`);
+      await axios.put(`${process.env.SERVER_URL}/order/${orderId}/fulfill`);
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order._id === orderId ? { ...order, fulfilled: true } : order
