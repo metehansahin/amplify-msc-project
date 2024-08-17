@@ -37,10 +37,10 @@ const Orders = () => {
       try {
         let response;
         if (merchant) {
-          response = await axios.get(`${process.env.SERVER_URL}/order`);
+          response = await axios.get(`${process.env.SERVER_URL}order`);
         } else {
           response = await axios.get(
-            `${process.env.SERVER_URL}/order/${userId}/all`
+            `${process.env.SERVER_URL}order/${userId}/all`
           );
         }
 
@@ -53,9 +53,7 @@ const Orders = () => {
         sortedOrders.forEach((order) =>
           order.products.forEach((product) =>
             productPromises.push(
-              axios.get(
-                `${process.env.SERVER_URL}/product/${product.productID}`
-              )
+              axios.get(`${process.env.SERVER_URL}product/${product.productID}`)
             )
           )
         );
@@ -79,7 +77,7 @@ const Orders = () => {
 
   const handleFulfillOrder = async (orderId) => {
     try {
-      await axios.put(`${process.env.SERVER_URL}/order/${orderId}/fulfill`);
+      await axios.put(`${process.env.SERVER_URL}order/${orderId}/fulfill`);
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order._id === orderId ? { ...order, fulfilled: true } : order

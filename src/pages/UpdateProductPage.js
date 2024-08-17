@@ -34,7 +34,7 @@ const UpdateProductPage = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `${process.env.SERVER_URL}/product/${id}`,
+          `${process.env.SERVER_URL}product/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const UpdateProductPage = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.put(`${process.env.SERVER_URL}/product/${id}`, product, {
+      await axios.put(`${process.env.SERVER_URL}product/${id}`, product, {
         headers: {
           "Content-Type": "application/json",
         },

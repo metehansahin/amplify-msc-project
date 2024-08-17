@@ -22,7 +22,7 @@ const ProductsPage = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get(`${process.env.SERVER_URL}/product`, {
+      const response = await axios.get(`${process.env.SERVER_URL}product`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -55,7 +55,7 @@ const ProductsPage = () => {
   const deleteProduct = async () => {
     try {
       await axios.delete(
-        `${process.env.SERVER_URL}/product/${productToDelete}`,
+        `${process.env.SERVER_URL}product/${productToDelete}`,
         {
           headers: {
             "Content-Type": "application/json",

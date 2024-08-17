@@ -28,7 +28,7 @@ const LoginPage = (props) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.SERVER_URL}/user/login`,
+        `${process.env.SERVER_URL}user/login`,
         credentials,
         {
           headers: {
