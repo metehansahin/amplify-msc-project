@@ -122,7 +122,7 @@ const BasketPage = () => {
     try {
       // Submit the order
       console.log(order);
-      await axios.post(`${process.env.SERVER_URL}order`, order);
+      await axios.post(`${process.env.SERVER_URL}/order`, order);
 
       // Update the stock for each product in the order
       const updatedProducts = products.map(async (product) => {
@@ -130,7 +130,7 @@ const BasketPage = () => {
 
         if (newStock >= 0) {
           await axios.put(
-            `${process.env.SERVER_URL}product/${product._id}`,
+            `${process.env.SERVER_URL}/product/${product._id}`,
             {
               ...product,
               stock: newStock,
