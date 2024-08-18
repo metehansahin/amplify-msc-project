@@ -75,7 +75,7 @@ const AddProductPage = () => {
     setIsSubmitting(true);
     try {
       const response = await axios.post(
-        `${process.env.SERVER_URL}/product`,
+        `${process.env.REACT_APP_SERVER_URL}product`,
         product,
         {
           headers: {

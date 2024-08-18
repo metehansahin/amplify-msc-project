@@ -20,11 +20,14 @@ const ProductsPage = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get(`${process.env.SERVER_URL}/product`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_SERVER_URL}product`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setProducts(response.data);
     } catch (error) {
       console.error(error);
@@ -53,7 +56,7 @@ const ProductsPage = () => {
   const deleteProduct = async () => {
     try {
       await axios.delete(
-        `${process.env.SERVER_URL}/product/${productToDelete}`,
+        `${process.env.REACT_APP_SERVER_URL}product/${productToDelete}`,
         {
           headers: {
             "Content-Type": "application/json",

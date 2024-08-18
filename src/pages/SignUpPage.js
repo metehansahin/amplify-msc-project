@@ -26,7 +26,7 @@ const SignupPage = (props) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.SERVER_URL}/user/register`,
+        `${process.env.REACT_APP_SERVER_URL}user/register`,
         credentials,
         {
           headers: {

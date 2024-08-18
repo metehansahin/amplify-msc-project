@@ -6,8 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
-        - echo "REACT_APP_REGION=${REGION}" >> .env
-        - echo "REACT_APP_SERVER_URL=${SERVER_URL}" >> .env
+        - echo "REACT_APP_REGION=${REACT_APP_REGION}" >> .env
+        - echo "REACT_APP_SERVER_URL=${REACT_APP_SERVER_URL}" >> .env
         - export NODE_OPTIONS=--openssl-legacy-provider
         - npm run build
   artifacts:
