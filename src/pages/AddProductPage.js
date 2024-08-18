@@ -12,8 +12,6 @@ import {
 import NavigationBar from "../components/NavigationBar";
 import { useNavigate } from "react-router-dom";
 
-require("dotenv").config();
-
 const AddProductPage = () => {
   const navigate = useNavigate();
 

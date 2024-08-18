@@ -12,8 +12,6 @@ import {
 import NavigationBar from "../components/NavigationBar";
 import { useNavigate, useParams } from "react-router-dom";
 
-require("dotenv").config();
-
 const UpdateProductPage = () => {
   const { id } = useParams(); // Get the product ID from the route params
   const navigate = useNavigate();

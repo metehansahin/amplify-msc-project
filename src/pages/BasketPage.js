@@ -41,8 +41,6 @@ import {
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
-require("dotenv").config();
-
 const BasketPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

@@ -11,8 +11,6 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 
-require("dotenv").config();
-
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
