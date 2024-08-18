@@ -8,6 +8,7 @@ frontend:
       commands:
         - echo "REACT_APP_REGION=${REGION}" >> .env
         - echo "REACT_APP_SERVER_URL=${SERVER_URL}" >> .env
+        - export NODE_OPTIONS=--openssl-legacy-provider
         - npm run build
   artifacts:
     baseDirectory: build
