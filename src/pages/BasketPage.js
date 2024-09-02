@@ -15,7 +15,6 @@ import {
   Typography,
   Stack,
   Card,
-  TextField,
   Snackbar,
   Alert,
   Dialog,
@@ -84,11 +83,15 @@ const BasketPage = () => {
   };
 
   const handleAddToBasket = (item) => {
-    const productToAdd = {
-      ...item,
-      quantity: 1,
-    };
-    dispatch(addToBasket(productToAdd));
+    if (item.quantity < item.stock) {
+      const productToAdd = {
+        ...item,
+        quantity: item.quantity + 1,
+      };
+      dispatch(addToBasket(productToAdd));
+    } else {
+      setError(`Cannot add more than available stock for ${item.name}`);
+    }
   };
 
   const handleCheckout = async () => {
