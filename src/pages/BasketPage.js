@@ -12,6 +12,7 @@ import {
   TableBody,
   Table,
   IconButton,
+  TextField,
   Typography,
   Stack,
   Card,
@@ -83,15 +84,11 @@ const BasketPage = () => {
   };
 
   const handleAddToBasket = (item) => {
-    if (item.quantity < item.stock) {
-      const productToAdd = {
-        ...item,
-        quantity: item.quantity + 1,
-      };
-      dispatch(addToBasket(productToAdd));
-    } else {
-      setError(`Cannot add more than available stock for ${item.name}`);
-    }
+    const productToAdd = {
+      ...item,
+      quantity: 1,
+    };
+    dispatch(addToBasket(productToAdd));
   };
 
   const handleCheckout = async () => {
@@ -264,6 +261,7 @@ const BasketPage = () => {
                                   aria-label="add"
                                   size="medium"
                                   onClick={handleAddToBasket.bind(null, item)}
+                                  disabled={item.quantity === item.stock}
                                 >
                                   <AddIcon fontSize="inherit" />
                                 </IconButton>
