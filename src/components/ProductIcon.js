@@ -150,7 +150,7 @@ const ProductIcon = ({ product, onDelete, onError, onSuccess }) => {
                   onClick={handleAddToBasket}
                   disabled={isOutOfStock}
                 >
-                  Add To Cart
+                  Add To Basket
                 </Button>
               </Box>
             )
