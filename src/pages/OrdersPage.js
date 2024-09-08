@@ -131,12 +131,13 @@ const Orders = () => {
                       <TableCell>{order.name}</TableCell>
                       <TableCell>{order.address}</TableCell>
                       <TableCell>
-                        {order.products.map((product, index) => (
-                          <div key={index}>
-                            {products[product.productID]} (Quantity:{" "}
-                            {product.quantity})
-                          </div>
-                        ))}
+                        <TableCell>
+                          {order.products.map((product, index) => (
+                            <div key={index}>
+                              {product.name} (Quantity: {product.quantity})
+                            </div>
+                          ))}
+                        </TableCell>
                       </TableCell>
                       <TableCell align="right">{order.totalCost}</TableCell>
                       <TableCell align="right">

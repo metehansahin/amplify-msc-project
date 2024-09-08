@@ -114,6 +114,7 @@ const BasketPage = () => {
       totalCost: totalAmount,
       products: products.map((product) => ({
         productID: product._id,
+        name: product.name,
         quantity: product.quantity,
       })),
     };
