@@ -2,6 +2,22 @@
 
 This repository contains the code and documentation for my master’s thesis project titled **"A Three-Tier Client-Server Architecture for An E-Commerce Web Application Utilising Serverless Technology"**. The project demonstrates a scalable, cost-effective, and flexible e-commerce platform developed first as a traditional three-tier client-server application and later migrated to a serverless cloud architecture using AWS services.
 
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -29,8 +45,8 @@ The aim is to create an application that automatically scales to handle high tra
 
 - **Product Catalogue:**
 
-  - View, add, edit, and delete products (merchant functionality)
-  - Browse and search products (customer functionality)
+  - View, add, edit, and delete products for merchants
+  - Browse and search products for customers
 
 - **Order Processing:**
 
@@ -61,8 +77,6 @@ The aim is to create an application that automatically scales to handle high tra
 - **Infrastructure as Code:**  
   AWS CDK is used to define and deploy cloud infrastructure.
 
-These architectural decisions are discussed in detail in the project report :contentReference[oaicite:0]{index=0}.
-
 ## Technologies Used
 
 - **Frontend:** React.js, Redux, HTML, CSS
@@ -81,6 +95,6 @@ These architectural decisions are discussed in detail in the project report :con
 ## Contact
 
 Metehan Sahin  
-Email: [your.email@example.com](mailto:your.email@example.com)  
-LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)  
-GitHub: [https://github.com/yourusername](https://github.com/yourusername)
+Email: [metehansahin03@gmail.com](mailto:metehansahin03@gmail.com)  
+LinkedIn: [metehansahin03](https://www.linkedin.com/in/metehansahin03/)  
+GitHub: [metehansahin](https://github.com/metehansahin)
