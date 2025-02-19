@@ -2,21 +2,7 @@
 
 This repository contains the code and documentation for my master’s thesis project titled **"A Three-Tier Client-Server Architecture for An E-Commerce Web Application Utilising Serverless Technology"**. The project demonstrates a scalable, cost-effective, and flexible e-commerce platform developed first as a traditional three-tier client-server application and later migrated to a serverless cloud architecture using AWS services.
 
-![alt text](image.png)
-
-![alt text](image-1.png)
-
-![alt text](image-2.png)
-
-![alt text](image-3.png)
-
-![alt text](image-4.png)
-
-![alt text](image-5.png)
-
-![alt text](image-6.png)
-
-![alt text](image-7.png)
+![alt text](<Picture 1.png>) ![alt text](<Picture 2.png>) ![alt text](<Picture 3.png>) ![alt text](<Picture 4.png>) ![alt text](<Picture 5.png>) ![alt text](<Picture 6.png>) ![alt text](<Picture 7.png>) ![alt text](<Picture 8.png>)
 
 ## Table of Contents
 
